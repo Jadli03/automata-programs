@@ -19,15 +19,21 @@
 
 void main()
 {
+    ///file pointer
    FILE *fp;
 
+   ///opening file in read mode
    fp = fopen("abc.txt", "r");
 
+   /// to get each character from file
      char ch;
+
+     /// counters for words, lines, characters
      int characters = 0, words = 0, lines = 0;
 
+     /// if fp is not null(f!=null) go inside if condition
    if(fp) {
-       while((ch = getc(fp)) != EOF)
+       while((ch = getc(fp)) != EOF)              ///reading each character from file until it reach End Of File(EOF)
        {
            if(ch != ' ' && ch != '\n')
                 characters++;

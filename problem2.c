@@ -33,14 +33,17 @@
 void main()
 {
 
+  /// Reading Numbers of State Q
     int Q;
     printf("\nEnter Numbers of States => ");
     scanf("%d", &Q);
 
+  /// Reading number of input alphabets  e.g. E = {0,1}
     int E;
     printf("\nEnter the numbers of Input Alphabet => ");
     scanf("%d", &E);
 
+    /// Read all input alphabets
     printf("\nEnter alphabets Without Space\n(Ex - ab or 01 )\n");
     char Ea[E];
     for(int i=0; i<E; i++)
@@ -51,14 +54,17 @@ void main()
         Ea[i] = ci;
     }
 
+    /// Read initial State
     int q;
     printf("\nEnter the Initial State => q");
     scanf("%d",&q);
 
+    /// Read Number of final State
     int F;
     printf("\nEnter the numbers of final state => ");
     scanf("%d", &F);
 
+    /// Read all the final state
     int Fa[10];
     printf("\n Enter the Final States \n");
     for(int i=0; i<F; i++)
@@ -67,7 +73,7 @@ void main()
         scanf("%d", &Fa[i]);
     }
 
-        //  Transition function
+        ///  Transition function
     printf("\n Transition Table \n");
     int dfa[Q][E];
     for(int i=0; i<Q; i++)
@@ -84,15 +90,15 @@ void main()
 
    do {
     char inStr[10];
-    printf("Enter the string to be checked \n");
+    printf("Enter the string to be checked \n");                    /// string to check
     scanf("%s", inStr);
 
     int s = q, i = 0, f = 0;
 
-    if(inStr[0] >= 'a' &&inStr[0] <= 'z')
+    if(inStr[0] >= 'a' &&inStr[0] <= 'z')    /// check if input alphabets are english alphabet or not
         f=1;
 
-
+    /// DFA String Acceptance Logic
     while(inStr[i] != '\0')
     {
         if(f == 1)
@@ -106,9 +112,9 @@ void main()
     }
 
     printf("Final result = q%d\n", s);
-
     int flag = 0;
 
+    /// if there are multiple final state then checking if final result matches any final state
     for(int k = 0; k<F; k++)
     {
       if(s == Fa[k])
