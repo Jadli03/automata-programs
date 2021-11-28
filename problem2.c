@@ -44,7 +44,7 @@ void main()
     scanf("%d", &E);
 
     /// Read all input alphabets
-    printf("\nEnter alphabets Without Space\n(Ex - ab or 01 )\n");
+    printf("\nEnter alphabets\n");
     char Ea[E];
     for(int i=0; i<E; i++)
     {
