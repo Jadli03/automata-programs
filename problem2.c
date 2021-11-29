@@ -21,6 +21,7 @@
        String Accepted or not
 
        Note -
+       Enter -1 if transit happening to Dead state
        -two type of input alphabets accepted only
             -alphabets
             -whole numbers
