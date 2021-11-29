@@ -105,9 +105,15 @@ void main()
         {
             int ch = inStr[i]-'a';
             s =  dfa[s][ch];
+            if(s == -1)
+                break;
         }
         else
-        s =  dfa[s][inStr[i]-'0'];
+        {
+            s =  dfa[s][inStr[i]-'0'];
+            if(s == -1)
+                break;
+        }
         i++;
     }
 
